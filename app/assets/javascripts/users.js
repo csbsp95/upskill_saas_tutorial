@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
     
     if (error) {
       // If there are card errors, don't send to Stripe
-      submitBtn.prop('disabled', false).bal('Sign Up');
+      submitBtn.prop('disabled', false).val('Sign Up');
     } else {
       // Send the card info to Stripe.
       Stripe.createToken({
@@ -58,7 +58,7 @@ $(document).on('turbolinks:load', function(){
 
     // Stripe will return a card token.
     function stripeResponseHandler(status, response) {
-      // Get the token from the response
+      // Get the token from the response.
       var token = response.id;
     
       // Inject card token as hidden field into form.
